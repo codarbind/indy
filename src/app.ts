@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.get("/health", async (req, res) => {
   res.status(200).json({
-    message: "hi 🤝 am good",
+    message: "hi 🤝 I am good",
   });
 });
 
@@ -26,9 +26,14 @@ mongoose
     console.log("didnt connect to db, ", err);
   });
 
-  import  urlRouter from "../src/routes/url"
+  import  encodeUrlRouter from "./routes/encodeUrl"
+  import decodeUrlRouter from "./routes/decodeUrl"
+  import deleteUrlRouter from "./routes/deleteUrl"
+  
 
-  app.use("/encode",urlRouter)
+  app.use("/encode",encodeUrlRouter)
+  app.use("/decode",decodeUrlRouter)
+  app.use("/delete",deleteUrlRouter)
 
 const port = process.env.port || 3030;
 app.listen(port, () => {

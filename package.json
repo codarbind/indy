@@ -21,7 +21,7 @@
   "name": "redicina",
   "version": "1.0.0",
   "description": "shorten a given url",
-  "main": "dist/app.js",
+  "main": "dist/src/app.js",
   "directories": {
     "test": "tests"
   },

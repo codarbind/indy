@@ -8,3 +8,8 @@ export default interface UrlInterface extends Document {
   _id?: string;
   createdAt?: string;
 }
+
+export interface Filter_Interface {
+  slug:string,
+  longurl:string
+}
