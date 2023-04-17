@@ -3,7 +3,7 @@ import urlModel from "../models/urlModel";
 export const update_stats = async (slug: string) => {
   try {
     let found_slug = await urlModel.findOne({ slug });
-    console.log({ found_slug });
+  
     if (!found_slug) return false;
     let {
       visitations: { first_visit, last_visit, count },
@@ -23,3 +23,14 @@ export const update_stats = async (slug: string) => {
     console.log({ error });
   }
 };
+
+
+export const get_stats = async (slug: string) => {
+    try {
+      let url = await urlModel.findOne({ slug });
+      if(!url) return { data: { }, status: 404, message:'not found' };
+      return { success: true, data: { stats:url }, status: 200 , message:'found'};
+    } catch (error: any) {
+      return { success: false, message: "server error", status: 500 };
+    }
+  };

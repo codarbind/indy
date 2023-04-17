@@ -29,11 +29,13 @@ mongoose
   import  encodeUrlRouter from "./routes/encodeUrl"
   import decodeUrlRouter from "./routes/decodeUrl"
   import deleteUrlRouter from "./routes/deleteUrl"
+  import statsRouter from "./routes/stats"
   
 
   app.use("/encode",encodeUrlRouter)
   app.use("/decode",decodeUrlRouter)
   app.use("/delete",deleteUrlRouter)
+  app.use("/statistic",statsRouter)
 
 const port = process.env.port || 3030;
 app.listen(port, () => {
