@@ -1,5 +1,5 @@
 import urlModel from "../models/urlModel"
-import { createSlug } from "./createSlug"
+import { createSlug } from "./createSlug.service"
 
 export const encode = async(longurl:string)=>{
 let {slug,success, message,status} = await createSlug()

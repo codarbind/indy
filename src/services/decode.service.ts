@@ -1,10 +1,9 @@
 import urlModel from "../models/urlModel";
-import { update_stats } from "./stats";
+import { update_stats } from "./stats.service";
 
 export const decode = async (slug: string) => {
   try {
     let url = await urlModel.findOne({ slug });
-    console.log({url})
     if(!url) return { data: { }, status: 404, message:'not found' };
     update_stats(slug)
     return { success: true, data: { url }, status: 200 , message:'found'};

@@ -1,6 +1,6 @@
 
 import { customAlphabet, nanoid } from 'nanoid'
-import { slug_is_taken } from './slugtaken'
+import { slug_is_taken } from './slugtaken.service'
 
 export const createSlug = async ()=>{
   try{

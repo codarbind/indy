@@ -21,7 +21,7 @@ describe("all should pass", () => {
   });
 
   describe("GET /decode - retrieve the longurl of a slug", () => {
-    it("should return 400 if the slug is not found", async () => {
+    it("should return 404 if the slug is not found", async () => {
       const response = await request(baseUrl).get(`/decode/slugabcdefgh09`);
       let body = response.body;
       let data = body.data;

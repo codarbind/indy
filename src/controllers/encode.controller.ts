@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { encode } from "../services/encode";
+import { encode } from "../services/encode.service";
 
 export const encoder = async (
   req: Request,

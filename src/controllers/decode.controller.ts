@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { decode } from "../services/decode";
+import { decode } from "../services/decode.service";
 
 export const decoder = async (
   req: Request,
@@ -13,7 +13,7 @@ export const decoder = async (
       return res
         .status(resp.status)
         .json({ success: false, message: resp.message });
-    if (resp.data?.url === null)
+    if (resp.data?.url === undefined)
       return res
         .status(resp.status)
         .json({ success: false, message: resp.message });
@@ -25,7 +25,6 @@ export const decoder = async (
           message: "found",
           data: { longurl: resp.data.url.longurl },
         });
-
     return res
       .status(400)
       .json({ message: "something went wrong", data: {}, success: false });

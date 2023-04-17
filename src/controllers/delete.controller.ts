@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { delete_slug } from "../services/deleteSlug";
+import { delete_slug } from "../services/deleteSlug.service";
 
 export const delete_url = async (
   req: Request,

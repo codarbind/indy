@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { get_stats } from "../services/stats";
+import { get_stats } from "../services/stats.service";
 
 export const stats_agg = async (
   req: Request,
