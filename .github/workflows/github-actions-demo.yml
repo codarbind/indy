@@ -2,7 +2,7 @@ name: My Gitub Actions Test
 run-name: ${{github.actor}} is the tester
 on: [push]
 jobs:
-  Exploring GitHub Actions:
+  ExploringGitHubActions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
